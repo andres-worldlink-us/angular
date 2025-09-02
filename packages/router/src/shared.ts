@@ -31,7 +31,7 @@ export const RouteTitleKey: unique symbol = /* @__PURE__ */ Symbol('RouteTitle')
  * @publicApi
  */
 export type Params = {
-  [key: string]: any;
+  readonly [key: string]: any;
 };
 
 /**

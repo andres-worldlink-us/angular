@@ -127,7 +127,7 @@ export class ApplyRedirects {
   }
 
   createQueryParams(redirectToParams: Params, actualParams: Params): Params {
-    const res: Params = {};
+    const res: {[key: string]: any} = {};
     Object.entries(redirectToParams).forEach(([k, v]) => {
       const copySourceValue = typeof v === 'string' && v[0] === ':';
       if (copySourceValue) {

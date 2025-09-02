@@ -560,7 +560,7 @@ export interface ParamMap {
 
 // @public
 export type Params = {
-    [key: string]: any;
+    readonly [key: string]: any;
 };
 
 // @public

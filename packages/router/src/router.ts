@@ -622,7 +622,7 @@ export class Router {
   }
 
   private removeEmptyProps(params: Params): Params {
-    return Object.entries(params).reduce((result: Params, [key, value]: [string, any]) => {
+    return Object.entries(params).reduce((result: {[key: string]: any}, [key, value]: [string, any]) => {
       if (value !== null && value !== undefined) {
         result[key] = value;
       }

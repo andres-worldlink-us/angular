@@ -575,7 +575,7 @@ class UrlParser {
   }
 
   parseQueryParams(): Params {
-    const params: Params = {};
+    const params: {[key: string]: any} = {};
     if (this.consumeOptional('?')) {
       do {
         this.parseQueryParam(params);
@@ -666,7 +666,7 @@ class UrlParser {
   }
 
   // Parse a single query parameter `name[=value]`
-  private parseQueryParam(params: Params): void {
+  private parseQueryParam(params: {[key: string]: any}): void {
     const key = matchQueryParams(this.remaining);
     if (!key) {
       return;

@@ -44,7 +44,7 @@ describe('ParamsMap', () => {
   });
 
   it('should not error when trying to call ParamMap.get function using an object created with Object.create() function', () => {
-    const objectToMap: Params = Object.create(null);
+    const objectToMap: {[key: string]: any} = Object.create(null);
     objectToMap['single'] = 's';
     objectToMap['multiple'] = ['m1', 'm2'];
     const paramMaps: ParamMap = convertToParamMap(objectToMap);
