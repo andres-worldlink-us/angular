@@ -622,12 +622,15 @@ export class Router {
   }
 
   private removeEmptyProps(params: Params): Params {
-    return Object.entries(params).reduce((result: {[key: string]: any}, [key, value]: [string, any]) => {
-      if (value !== null && value !== undefined) {
-        result[key] = value;
-      }
-      return result;
-    }, {});
+    return Object.entries(params).reduce(
+      (result: {[key: string]: any}, [key, value]: [string, any]) => {
+        if (value !== null && value !== undefined) {
+          result[key] = value;
+        }
+        return result;
+      },
+      {},
+    );
   }
 
   private scheduleNavigation(
